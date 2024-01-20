@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?><!-- TODO: Change chip style-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".presentation.routes_data.routes.RoutesFragment">
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_sort"
+        style="@style/Widget.Material3.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="16dp"
+        android:checkable="false"
+        app:chipIcon="@drawable/ic_tune"
+        app:chipIconTint="?attr/colorOnSurface"
+        app:chipIconVisible="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Sort by" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_date_range"
+        style="@style/Widget.Material3.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:checkable="false"
+        app:chipIcon="@drawable/ic_timeline"
+        app:chipIconTint="?attr/colorOnSurface"
+        app:chipIconVisible="true"
+        app:layout_constraintStart_toEndOf="@id/chip_sort"
+        app:layout_constraintTop_toTopOf="@id/chip_sort"
+        tools:text="Date Range" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/chip_activity"
+        style="@style/Widget.Material3.Chip.Filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:checkable="false"
+        app:chipIcon="@drawable/ic_emoji_events"
+        app:chipIconTint="?attr/colorOnSurface"
+        app:chipIconVisible="true"
+        app:layout_constraintStart_toEndOf="@id/chip_date_range"
+        app:layout_constraintTop_toTopOf="@id/chip_date_range"
+        tools:text="Activity" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_route"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chip_sort"
+        tools:listitem="@layout/item_routes" />
+
+    <include
+        android:id="@+id/layout_empty_data"
+        layout="@layout/layout_empty_data"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chip_sort" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

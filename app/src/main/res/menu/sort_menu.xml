@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option_latest"
+        android:title="@string/sort_latest" />
+    <item
+        android:id="@+id/option_earliest"
+        android:title="@string/sort_earliest" />
+    <item
+        android:id="@+id/option_longest"
+        android:title="@string/sort_longest" />
+    <item
+        android:id="@+id/option_shortest"
+        android:title="@string/sort_shortest" />
+    <item
+        android:id="@+id/option_longest_time"
+        android:title="@string/sort_longest_time" />
+    <item
+        android:id="@+id/option_shortest_time"
+        android:title="@string/sort_shortest_time" />
+</menu>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/option_all_activity"
+        android:title="@string/all_activity" />
+    <item
+        android:id="@+id/option_running"
+        android:title="@string/running" />
+    <item
+        android:id="@+id/option_cycling"
+        android:title="@string/cycling" />
+</menu>

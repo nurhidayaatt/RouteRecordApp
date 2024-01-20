@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view"
+    style="?attr/materialCardViewElevatedStyle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/iconButton"
+            style="?attr/materialIconButtonFilledStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:clickable="false"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:icon="@drawable/ic_directions_run" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/iconButton"
+            app:layout_constraintTop_toTopOf="@id/iconButton"
+            tools:text="Running" />
+
+        <TextView
+            android:id="@+id/tv_timestamp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            app:drawableTint="?attr/colorOnSurface"
+            app:layout_constraintEnd_toStartOf="@id/btn_more"
+            app:layout_constraintStart_toStartOf="@id/tv_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="Monday, May 1, 2023 (9:30 PM)" />
+
+        <Button
+            android:id="@+id/btn_more"
+            style="?attr/materialIconButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:icon="@drawable/ic_more_vert"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <ImageView
+            android:id="@+id/iv_route"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:contentDescription="@string/desc_route_image"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/iconButton"
+            app:layout_constraintTop_toBottomOf="@id/iconButton"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/tv_title_duration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:drawablePadding="4dp"
+            app:layout_constraintHorizontal_weight="5"
+            app:drawableStartCompat="@drawable/ic_timer_18"
+            app:drawableTint="?attr/colorOnSurface"
+            app:layout_constraintTop_toBottomOf="@id/iv_route"
+            app:layout_constraintStart_toStartOf="@id/iv_route"
+            app:layout_constraintEnd_toStartOf="@id/tv_title_distance"
+            android:text="Time" />
+
+        <TextView
+            android:id="@+id/tv_title_distance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawablePadding="4dp"
+            app:drawableStartCompat="@drawable/ic_route_18"
+            app:drawableTint="?attr/colorOnSurface"
+            app:layout_constraintHorizontal_weight="6"
+            app:layout_constraintStart_toEndOf="@id/tv_title_duration"
+            app:layout_constraintTop_toTopOf="@id/tv_title_duration"
+            app:layout_constraintEnd_toStartOf="@id/tv_title_pace"
+            android:text="Distance" />
+
+        <TextView
+            android:id="@+id/tv_title_pace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:drawablePadding="4dp"
+            app:drawableStartCompat="@drawable/ic_schedule_18"
+            app:drawableTint="?attr/colorOnSurface"
+            app:layout_constraintHorizontal_weight="10"
+            app:layout_constraintStart_toEndOf="@id/tv_title_distance"
+            app:layout_constraintTop_toTopOf="@id/tv_title_distance"
+            app:layout_constraintEnd_toEndOf="@id/iv_route"
+            android:text="Pace" />
+
+        <TextView
+            android:id="@+id/tv_duration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            android:drawablePadding="4dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:drawableTint="?attr/colorOnSurface"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_title_duration"
+            app:layout_constraintEnd_toEndOf="@id/tv_title_duration"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_duration"
+            tools:text="8h 88m" />
+
+
+        <TextView
+            android:id="@+id/tv_distance"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:drawableTint="?attr/colorOnSurface"
+            app:layout_constraintStart_toStartOf="@+id/tv_title_distance"
+            app:layout_constraintEnd_toEndOf="@id/tv_title_distance"
+            app:layout_constraintTop_toTopOf="@id/tv_duration"
+            tools:text="99 km" />
+
+        <TextView
+            android:id="@+id/tv_pace"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:drawablePadding="4dp"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:drawableTint="?attr/colorOnSurface"
+            app:layout_constraintStart_toStartOf="@id/tv_title_pace"
+            app:layout_constraintEnd_toEndOf="@id/tv_title_pace"
+            app:layout_constraintTop_toTopOf="@id/tv_distance"
+            tools:text="99.99min/km" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
