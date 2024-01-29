@@ -4,6 +4,7 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.Service
 import android.content.Intent
+import android.content.pm.ServiceInfo
 import android.location.Location
 import android.os.Binder
 import android.os.Build
@@ -106,6 +107,12 @@ class LocationService : Service() {
         if (serviceData.value.state == LocationTrackingState.Started) return
         createNotificationChannel()
         startForeground(NOTIFICATION_ID, notificationBuilder.build())
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            startForeground(NOTIFICATION_ID, notificationBuilder.build(), ServiceInfo.FOREGROUND_SERVICE_TYPE_LOCATION)
+        } else {
+            startForeground(NOTIFICATION_ID, notificationBuilder.build(),)
+        }
 
         _serviceData.update { it.copy(state = LocationTrackingState.Started) }
         setNotificationButton()
